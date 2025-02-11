@@ -23,8 +23,8 @@ def split_by_headers(content):
     return sections
 
 def sort_sections(sections):
-    return {header: sorted(lines) for header, lines in sorted(sections.items())}
-
+     return {header: sections[header] for header in sorted(sections.keys())}
+ 
 def save_sorted_copy(original_path, sorted_sections):
     copy_path = original_path + ".sorted_copy"
     with open(copy_path, 'w', encoding='utf-8') as file:
